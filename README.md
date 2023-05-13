@@ -191,3 +191,92 @@ Problem 20: What is an Abstract Class? When do you use an Abstract Class? How do
 . Abstract classes differ from interfaces in that they can contain both abstract and non-abstract methods, and can also contain instance variables. Interfaces can only contain abstract methods, default methods, and static methods, and cannot contain instance variables. <br> 
 . Interfaces are used to define a contract that implementing classes must adhere to, while abstract classes are used to define a base class that is intended to be extended. In general, interfaces are used when there is no common behavior among implementing classes, while abstract classes are used when there is common behavior among a group of related classes.  <br>
 
+Problem 21: What is a Constructor? <br>
+ 
+Answer: A constructor is a special type of method in Java that is used to initialize an object of a class. It is called when an object of the class is created, and its purpose is to set the initial values of the object's member variables.
+
+Problem 22: What is a Default Constructor? <br>
+
+Answer: A default constructor is a constructor that is automatically provided by Java if you do not define any constructor for a class. It has no parameters, and its body is empty.
+
+Problem 23: Will this code compile? <br>
+
+arduino
+Copy code
+public class MyClass {
+  int x;
+
+  public MyClass(int y) {
+    x = y;
+  }
+
+  public static void main(String[] args) {
+    MyClass myObj = new MyClass();
+    System.out.println(myObj.x);
+  }
+}
+Answer: No, this code will not compile because the MyClass constructor expects an integer argument, but it is called without any argument in the main method.
+
+Problem 24: How do you call a Super Class Constructor from a Constructor? <br>
+
+Answer: You can call a super class constructor from a constructor of a sub class using the super keyword. The super keyword must be the first statement in the constructor, and it can take arguments that match the parameters of the super class constructor.
+
+Example:
+
+java
+Copy code
+public class SubClass extends SuperClass {
+  public SubClass(int x, int y) {
+    super(x); // calling SuperClass constructor with one argument
+    // additional code for SubClass constructor
+  }
+}
+Problem 25: Will this code Compile? <br>
+
+csharp
+Copy code
+public class MyClass {
+  int x;
+
+  public MyClass() {
+    this(5);
+  }
+
+  public MyClass(int y) {
+    x = y;
+  }
+}
+Answer: Yes, this code will compile. The first constructor MyClass() calls the second constructor MyClass(int y) using the this keyword with the argument 5.
+
+Problem 26: What is the use of this()? <br>
+
+Answer: this() is used to call a constructor from another constructor of the same class. It is often used to avoid duplicate code when multiple constructors share common initialization code.
+
+Example:
+
+csharp
+Copy code
+public class MyClass {
+  int x;
+
+  public MyClass() {
+    this(5);
+  }
+
+  public MyClass(int y) {
+    x = y;
+  }
+}
+Problem 27: Can a constructor be called directly from a method? <br>
+
+Answer: No, a constructor cannot be called directly from a method. Constructors are only called when an object of a class is created using the new keyword.
+
+Problem 28: Is a super class constructor called even when there is no explicit call from a sub class constructor? <br>
+
+Answer: Yes, a super class constructor is always called, even if there is no explicit call from a sub class constructor. If a sub class constructor does not call a super class constructor explicitly, the default constructor of the super class (with no arguments) is called automatically.
+
+Problem 29: Difference between compile time and run time polymorphism? <br>
+
+Answer: Compile time polymorphism (or method overloading) is a mechanism in Java that allows a class to have multiple methods with the same name but different parameters. The appropriate method to be called is determined at compile time based on the method signature.
+
+Run time polymorphism (or method overriding) is a mechanism in Java that allows a sub class to provide a different implementation of a method that is already defined in its super class. The appropriate method to be called is determined at run time based on the actual object that the method is called on, rather than the type of the reference variable used to call the method.

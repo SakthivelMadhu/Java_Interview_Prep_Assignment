@@ -149,3 +149,45 @@ A: Method Overriding is a feature in Java that allows a subclass to provide its 
 Problem 12 : Can super class reference variable hold an object of sub class? <br>
 
 A: Yes, a super class reference variable can hold an object of a subclass. This is known as upcasting.
+
+Problem 13: Is Multiple Inheritance allowed in Java?  <br>
+
+Java does not support multiple inheritance with classes, which means a class cannot inherit from more than one class. This was done to avoid the diamond problem where two superclasses have a common method name and the subclass needs to override it. However, Java allows multiple inheritance with interfaces.
+
+Problem 14: What is an Interface?  <br>
+
+An interface in Java is a collection of abstract methods and constants that can be implemented by any class. It provides a way for classes to be able to share a common behavior without needing to inherit from a common superclass. Interfaces define a contract that implementing classes must adhere to.
+
+Problem 15: How do you define an Interface?  <br>
+
+An interface in Java can be defined using the following syntax:
+Here, accessModifier specifies the visibility of the interface. The list of constants and method signatures define the behavior of the interface.
+
+Problem 16: How do you implement an interface?  <br>
+
+An interface is implemented by a class using the implements keyword followed by the interface name. For example:
+Here, MyClass implements the MyInterface interface and must provide an implementation for all the methods defined in the interface.
+
+Problem 17: Can you explain a few tricky things about interfaces?  <br>
+
+Interfaces cannot be instantiated directly. They can only be implemented by a class.  <br>
+A class can implement multiple interfaces.  <br>
+Interfaces can extend other interfaces, creating a hierarchy of interfaces.  <br>
+Interfaces can only contain abstract methods, default methods, and static methods. They cannot contain instance variables.  <br>
+All the methods in an interface are by default public and abstract.  <br>
+
+Problem 18: Can you extend an interface?  <br>
+
+Yes, an interface can extend another interface using the extends keyword. This allows the sub-interface to inherit the methods and constants of the parent interface, and also add its own methods and constants.
+
+Problem 19: Can a class implement multiple interfaces? <br>
+
+Yes, a class can implement multiple interfaces. This allows the class to have behavior from multiple sources and enables it to be more flexible.
+
+Problem 20: What is an Abstract Class? When do you use an Abstract Class? How do you define an Abstract Method? Compare Abstract Class vs Interfaces?  <br>
+
+. An abstract class in Java is a class that cannot be instantiated and can contain both abstract and non-abstract methods. Abstract classes are used to define a base class that contains common behavior and is intended to be extended by concrete classes. Abstract classes are defined using the abstract keyword.  <br>
+. An abstract method is a method that is declared but does not have an implementation. Abstract methods are intended to be overridden by concrete subclasses. <br>
+. Abstract classes differ from interfaces in that they can contain both abstract and non-abstract methods, and can also contain instance variables. Interfaces can only contain abstract methods, default methods, and static methods, and cannot contain instance variables. <br> 
+. Interfaces are used to define a contract that implementing classes must adhere to, while abstract classes are used to define a base class that is intended to be extended. In general, interfaces are used when there is no common behavior among implementing classes, while abstract classes are used when there is common behavior among a group of related classes.  <br>
+

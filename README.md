@@ -96,3 +96,56 @@ A: Yes, some examples of utility methods in String class are:
 . equals(Object obj) - compares the String to the specified object <br>
 . indexOf(int ch) - returns the index of the first occurrence of the specified character. <br>
 
+OOPS : <br>
+Problem 1: What is a Class? <br>
+
+A: In Java, a class is a blueprint or a template for creating objects. It defines the properties and methods that objects of the class will have.
+
+Problem 2: What is state of an Object? <br>
+
+A: The state of an object refers to the values of its properties or attributes at a given point in time. It represents the current condition or configuration of the object.
+
+Problem 3: What is behavior of an Object? <br>
+
+A: The behavior of an object refers to the actions or operations that can be performed on it. It is determined by the methods or functions defined in the class.
+
+Problem 4: What is the super class of every class in Java? <br>
+
+A: The Object class is the superclass of every class in Java. All classes inherit directly or indirectly from the Object class.
+
+Problem 5: Explain about toString method? <br>
+
+A: The toString method is a method defined in the Object class that returns a string representation of the object. It is often overridden in derived classes to provide a customized string representation.
+
+Problem 6: What is the use of equals method in Java? <br>
+
+A: The equals method in Java is used to compare two objects for equality. It is used to determine whether two objects have the same value or not.
+
+Problem 7: What are the important things to consider when implementing equals method? <br>
+
+A: The important things to consider when implementing equals method are:
+. The method should be reflexive: a.equals(a) should return true. <br>
+. The method should be symmetric: a.equals(b) should return true if and only if b.equals(a) returns true. <br>
+. The method should be transitive: if a.equals(b) and b.equals(c) return true, then a.equals(c) should also return true. <br>
+. The method should be consistent: a.equals(b) should return the same value each time it is called. <br>
+. The method should return false if the argument is null. <br>
+
+Problem 8: What is the hashCode method used for in Java? <br> 
+
+A: The hashCode method in Java is used to generate a hash code value for an object. The hash code is used by data structures such as hash tables and hash maps to store and retrieve objects efficiently.
+
+Problem 9: Explain inheritance with Examples. <br> 
+
+A: Inheritance is a mechanism in Java by which a class can inherit the properties and methods of another class. The class that inherits is called the subclass or derived class, and the class that is inherited from is called the superclass or base class. For example, consider a class hierarchy consisting of a superclass "Animal" and two subclasses "Cat" and "Dog". Both "Cat" and "Dog" inherit the properties and methods of "Animal" such as "name" and "move()".
+
+Problem 10: What is Method Overloading? <br> 
+
+A: Method Overloading is a feature in Java that allows a class to have multiple methods with the same name but different parameters. It is used to provide different ways of calling a method with different input parameters.
+
+Problem 11: What is Method Overriding? <br>
+
+A: Method Overriding is a feature in Java that allows a subclass to provide its own implementation of a method that is already defined in the superclass. It is used to provide a specialized implementation of a method in the subclass.
+
+Problem 12 : Can super class reference variable hold an object of sub class? <br>
+
+A: Yes, a super class reference variable can hold an object of a subclass. This is known as upcasting.

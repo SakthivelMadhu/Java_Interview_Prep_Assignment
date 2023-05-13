@@ -272,3 +272,42 @@ Problem 29: Difference between compile time and run time polymorphism? <br>
 Answer: Compile time polymorphism (or method overloading) is a mechanism in Java that allows a class to have multiple methods with the same name but different parameters. The appropriate method to be called is determined at compile time based on the method signature.
 
 Run time polymorphism (or method overriding) is a mechanism in Java that allows a sub class to provide a different implementation of a method that is already defined in its super class. The appropriate method to be called is determined at run time based on the actual object that the method is called on, rather than the type of the reference variable used to call the method.
+
+
+Advanced OOPS : <br> 
+
+Problem 1: What is Polymorphism?  <br> 
+
+Answer: Polymorphism is the ability of an object to take on multiple forms. In Java, there are two types of polymorphism - compile-time polymorphism and runtime polymorphism. Compile-time polymorphism is achieved through method overloading, while runtime polymorphism is achieved through method overriding.
+
+Problem 2 :What is the use of instanceof Operator in Java?  <br> 
+
+Answer: The instanceof operator in Java is used to check if an object is an instance of a specific class or an instance of a class that is a subclass of a specified class. The operator returns a boolean value true if the object is an instance of the specified class or its subclass, and false otherwise.
+
+Problem 3 : What is Coupling?  <br> 
+
+Answer: Coupling is a measure of how closely connected two classes or modules are to each other. It refers to the level of dependency between two modules, and high coupling between modules can make the system difficult to maintain and change. Low coupling is desirable as it makes the system more modular and easier to modify.
+
+Problem 4: What is Cohesion?  <br> 
+
+Answer: Cohesion refers to the degree to which the elements within a module or class are related to each other. High cohesion means that elements in a module or class are closely related and work together to perform a specific task. This makes the module or class easier to understand, maintain, and modify.
+
+Problem 5: What is Encapsulation?  <br> 
+
+Answer: Encapsulation is a fundamental principle of object-oriented programming that refers to the mechanism of hiding the internal implementation details of an object and exposing only its interface or public methods to the outside world. This allows for better control over the data and behavior of an object and improves the maintainability and flexibility of the code.
+
+Problem 6 : What is an Inner Class?  <br> 
+
+Answer: An Inner class is a class that is defined within another class. In Java, inner classes can be static or non-static, and they have access to the variables and methods of the enclosing class.
+
+Problem 7: What is a Static Inner Class?  <br> 
+
+Answer: A static inner class is a nested class that is defined as static within the enclosing class. It can be accessed using the enclosing class name and does not require an instance of the enclosing class to be created.
+
+Problem 8: Can you create an inner class inside a method?  <br> 
+
+Answer: Yes, in Java, it is possible to create an inner class inside a method. This is known as a local inner class, and it can only be accessed within the method in which it is defined.
+
+Problem 9 : What is an Anonymous Class?  <br> 
+
+Answer: An anonymous class is a local inner class without a name, and it is used to create an instance of a class and override its methods at the same time. It is declared and instantiated in a single statement and is used to implement an interface or extend a class. Anonymous classes are often used to create event handlers and callbacks.

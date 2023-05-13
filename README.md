@@ -54,3 +54,35 @@ A: Implicit casting, also known as widening conversion, is the automatic convers
 Problem 8: What is Explicit Casting? <br> 
 
 A: Explicit casting, also known as narrowing conversion, is the manual conversion of a variable from a higher precision data type to a lower precision data type. For example, when assigning a double value to an int variable, the double value must be explicitly cast to an int.
+
+Strings : <br>
+Problem 1: Are all String’s immutable? <br>
+A: Yes, all String objects are immutable in Java. Once a String object is created, its value cannot be changed.
+
+Problem 2: Where are string values stored in memory? <br>
+A: String values are stored in a special memory area called the String constant pool, which is a part of the Java heap.
+
+Problem 3: Why should you be careful about String Concatenation(+) operator in Loops? <br>
+A: When using the + operator to concatenate Strings in a loop, a new String object is created on each iteration, which can result in a lot of unnecessary memory allocation and impact the performance of the program.
+
+Problem 4: How do you solve above problem? <br>
+A: To solve the above problem, we can use the StringBuilder or StringBuffer class to concatenate Strings in a loop as they are mutable and do not create new String objects on each iteration.
+
+Problem 5: What are differences between String and StringBuffer? <br>
+A: The main difference between String and StringBuffer is that String is immutable, while StringBuffer is mutable. This means that once a String object is created, its value cannot be changed, whereas a StringBuffer object can be modified.
+
+Problem 6: What are differences between StringBuilder and StringBuffer? <br>
+A: The main difference between StringBuilder and StringBuffer is that StringBuilder is not thread-safe, while StringBuffer is thread-safe. This means that StringBuffer is synchronized and can be accessed by multiple threads without any issues, whereas StringBuilder is not synchronized and should not be used in a multi-threaded environment.
+
+Problem 7: Can you give examples of different utility methods in String class? <br> 
+A: Yes, some examples of utility methods in String class are:
+
+. length() - returns the length of the String
+. charAt(int index) - returns the character at the specified index
+. substring(int beginIndex, int endIndex) - returns a substring of the String
+. trim() - removes leading and trailing white space
+. toUpperCase() - converts the String to uppercase
+. toLowerCase() - converts the String to lowercase
+. equals(Object obj) - compares the String to the specified object
+. indexOf(int ch) - returns the index of the first occurrence of the specified character.
+

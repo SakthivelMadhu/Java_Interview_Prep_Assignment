@@ -201,72 +201,64 @@ Answer: A default constructor is a constructor that is automatically provided by
 
 Problem 23: Will this code compile? <br>
 
-arduino
-Copy code
-public class MyClass {
-  int x;
+public class MyClass { <br>
+  int x; <br>
 
-  public MyClass(int y) {
-    x = y;
-  }
+  public MyClass(int y) { <br>
+    x = y; <br>
+  } <br>
 
-  public static void main(String[] args) {
-    MyClass myObj = new MyClass();
-    System.out.println(myObj.x);
-  }
-}
+  public static void main(String[] args) { <br>
+    MyClass myObj = new MyClass(); <br>
+    System.out.println(myObj.x); <br>
+  } <br>
+} <br>
 Answer: No, this code will not compile because the MyClass constructor expects an integer argument, but it is called without any argument in the main method.
 
 Problem 24: How do you call a Super Class Constructor from a Constructor? <br>
 
 Answer: You can call a super class constructor from a constructor of a sub class using the super keyword. The super keyword must be the first statement in the constructor, and it can take arguments that match the parameters of the super class constructor.
 
-Example:
+Example: <br>
 
-java
-Copy code
-public class SubClass extends SuperClass {
-  public SubClass(int x, int y) {
-    super(x); // calling SuperClass constructor with one argument
-    // additional code for SubClass constructor
-  }
-}
+public class SubClass extends SuperClass { <br>
+  public SubClass(int x, int y) { <br>
+    super(x); // calling SuperClass constructor with one argument <br>
+    // additional code for SubClass constructor <br>
+  } <br>
+}<br>
+
 Problem 25: Will this code Compile? <br>
 
-csharp
-Copy code
-public class MyClass {
-  int x;
+public class MyClass { <br>
+  int x; <br>
 
-  public MyClass() {
-    this(5);
-  }
+  public MyClass() { <br>
+    this(5); <br>
+  } <br>
 
-  public MyClass(int y) {
-    x = y;
-  }
-}
+  public MyClass(int y) { <br>
+    x = y; <br>
+  } <br>
+} <br>
 Answer: Yes, this code will compile. The first constructor MyClass() calls the second constructor MyClass(int y) using the this keyword with the argument 5.
 
 Problem 26: What is the use of this()? <br>
 
 Answer: this() is used to call a constructor from another constructor of the same class. It is often used to avoid duplicate code when multiple constructors share common initialization code.
 
-Example:
+Example: <br>
+public class MyClass { <br>
+  int x; <br>
 
-csharp
-Copy code
-public class MyClass {
-  int x;
+  public MyClass() { <br>
+    this(5); <br>
+  } <br>
 
-  public MyClass() {
-    this(5);
-  }
-
-  public MyClass(int y) {
-    x = y;
-  }
-}
+  public MyClass(int y) { <br>
+    x = y; <br>
+  } <br>
+} <br>
 Problem 27: Can a constructor be called directly from a method? <br>
 
 Answer: No, a constructor cannot be called directly from a method. Constructors are only called when an object of a class is created using the new keyword.

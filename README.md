@@ -24,25 +24,33 @@ A: The class loader in Java is responsible for loading Java classes into memory 
 
 Wrapper Class : <br> 
 Problem 1:  What are wrapper classes? <br> 
-Answer: In Java, wrapper classes are used to represent primitive data types (int, char, boolean, etc.) as objects. They provide a way to convert primitive data types into objects and also provide several utility methods to work with these objects.
+
+A: In Java, wrapper classes are used to represent primitive data types (int, char, boolean, etc.) as objects. They provide a way to convert primitive data types into objects and also provide several utility methods to work with these objects.
 
 Problem 2: Why do we need Wrapper Classes in Java? <br> 
-Answer: Wrapper classes are needed in Java because some of the Java APIs require objects instead of primitive data types. For example, the Collections framework can only work with objects, so we need to convert primitive data types to objects using wrapper classes. Additionally, wrapper classes provide useful methods for manipulating and working with these objects.
+
+A: Wrapper classes are needed in Java because some of the Java APIs require objects instead of primitive data types. For example, the Collections framework can only work with objects, so we need to convert primitive data types to objects using wrapper classes. Additionally, wrapper classes provide useful methods for manipulating and working with these objects.
 
 Problem 3: What are the different ways of creating Wrapper Class Instances?<br> 
-Answer: There are two ways to create Wrapper Class Instances in Java - using the constructor of the wrapper class or using valueOf() method of the wrapper class.
+
+A: There are two ways to create Wrapper Class Instances in Java - using the constructor of the wrapper class or using valueOf() method of the wrapper class.
 
 Problem 4: What are differences in the two ways of creating wrapper classes? <br> 
-Answer: The main difference between the two ways of creating wrapper classes is that using the constructor always creates a new object, while using the valueOf() method may reuse an existing object from the cache if the value falls within a certain range.
+
+A: The main difference between the two ways of creating wrapper classes is that using the constructor always creates a new object, while using the valueOf() method may reuse an existing object from the cache if the value falls within a certain range.
 
 Problem 5: What is Auto Boxing? <br> 
-Answer: Auto Boxing is a feature introduced in Java 5 that automatically converts primitive data types into their corresponding wrapper classes when necessary. This allows developers to use primitive data types and wrapper classes interchangeably in code.
+
+A: Auto Boxing is a feature introduced in Java 5 that automatically converts primitive data types into their corresponding wrapper classes when necessary. This allows developers to use primitive data types and wrapper classes interchangeably in code.
 
 Problem 6: What is Casting? <br> 
-Answer: Casting is the process of converting a variable of one data type to another data type. In Java, this can be done implicitly or explicitly, depending on the data types involved.
+
+A: Casting is the process of converting a variable of one data type to another data type. In Java, this can be done implicitly or explicitly, depending on the data types involved.
 
 Problem 7: What is Implicit Casting? <br> 
-Answer: Implicit casting, also known as widening conversion, is the automatic conversion of a variable from a lower precision data type to a higher precision data type. For example, when assigning an int value to a double variable, the int value is implicitly cast to a double.
+
+A: Implicit casting, also known as widening conversion, is the automatic conversion of a variable from a lower precision data type to a higher precision data type. For example, when assigning an int value to a double variable, the int value is implicitly cast to a double.
 
 Problem 8: What is Explicit Casting? <br> 
-Answer: Explicit casting, also known as narrowing conversion, is the manual conversion of a variable from a higher precision data type to a lower precision data type. For example, when assigning a double value to an int variable, the double value must be explicitly cast to an int.
+
+A: Explicit casting, also known as narrowing conversion, is the manual conversion of a variable from a higher precision data type to a lower precision data type. For example, when assigning a double value to an int variable, the double value must be explicitly cast to an int.

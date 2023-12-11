@@ -311,3 +311,534 @@ Answer: Yes, in Java, it is possible to create an inner class inside a method. T
 Problem 9 : What is an Anonymous Class?  <br> 
 
 Answer: An anonymous class is a local inner class without a name, and it is used to create an instance of a class and override its methods at the same time. It is declared and instantiated in a single statement and is used to implement an interface or extend a class. Anonymous classes are often used to create event handlers and callbacks.
+
+
+
+# Problem 1: What is loose coupling?
+Loose coupling refers to the degree of independence between interacting components or modules in a system. In a loosely coupled system, components are independent and interact through well-defined interfaces, reducing dependencies and making the system more flexible and maintainable.
+
+# Problem 2: What is a Dependency?
+A dependency occurs when one class relies on another class to perform its functionality. It is a relationship between two classes where one class uses the functionality of another. Dependencies can be managed to achieve loose coupling between classes.
+
+# Problem 3: What is IOC (Inversion of Control)?
+Inversion of Control (IoC) is a design principle where the control of a system is inverted, and the framework or container manages the flow of control. In the context of Spring, IoC means that the Spring container controls the creation and management of objects (beans), and the developer focuses on defining the components and their relationships.
+
+# Problem 4: What is Dependency Injection?
+Dependency Injection (DI) is a design pattern used in IoC to inject dependencies (e.g., objects, services) into a class rather than allowing the class to create them. This promotes loose coupling and makes the code more modular and testable. Spring supports DI through constructor injection, setter injection, and method injection.
+
+# Problem 5: Can you give few examples of Dependency Injection?
+```bash
+// Example using Constructor Injection
+public class UserService {
+    private final UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+}
+
+// Example using Setter Injection
+public class OrderService {
+    private PaymentService paymentService;
+
+    @Autowired
+    public void setPaymentService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
+}
+```
+# Problem 6: What is Auto Wiring?
+Auto-wiring is a feature in Spring that allows the container to automatically inject dependencies into a bean. It reduces the need for explicit configuration by inferring the relationships between beans based on naming conventions, types, or annotations.
+
+# Problem 7: What are the important roles of an IOC Container?
+
+Instantiation: Manages the creation of objects.
+Configuration: Configures objects and their relationships.
+Assembly: Assembles the application's components.
+Lifecycle Management: Manages the lifecycle of objects.
+Dependency Injection: Injects dependencies into components.
+# Problem 8: What are Bean Factory and Application Context?
+
+Bean Factory: The basic IoC container provided by Spring. It manages the lifecycle of beans and their dependencies.
+Application Context: An advanced IoC container that builds on the Bean Factory and provides additional features like event propagation, AOP, and more. It is preferred over Bean Factory in most applications.
+# Problem 9: Can you compare Bean Factory with Application Context?
+
+Bean Factory: Basic container, lazy initialization, lacks advanced features.
+Application Context: Advanced container, eager initialization, supports additional features like event propagation, AOP, and more.
+# Problem 10: How do you create an application context with Spring?
+```bash
+// Using XML configuration
+ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+// Using Java configuration
+ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+```
+# Problem 11: How does Spring know where to search for Components or Beans?
+Spring uses component scanning to automatically discover and register beans in the classpath. It scans specified packages for classes annotated with @Component and related annotations, registering them as Spring beans.
+
+# Problem 12: What is a component scan?
+Component scanning is a feature in Spring that automatically detects and registers Spring beans in the classpath. It involves scanning packages for classes annotated with @Component and related annotations.
+
+# Problem 13: How do you define a component scan in XML and Java Configurations?
+
+```bash
+<!-- XML Configuration -->
+<context:component-scan base-package="com.example"/>
+
+// Java Configuration
+@Configuration
+@ComponentScan(basePackages = "com.example")
+public class AppConfig {}
+```
+# Problem 14: How is it done with Spring Boot?
+In Spring Boot, component scanning is enabled by default. Spring Boot uses the package of the main application class (annotated with @SpringBootApplication) as the base package for component scanning.
+
+# Problem 15: What does @Component signify?
+@Component is a Spring annotation used to indicate that a class is a Spring component (bean). Spring will automatically detect and register classes annotated with @Component during component scanning.
+
+# Problem 16: What does @Autowired signify?
+@Autowired is used to inject dependencies in Spring. It can be applied to fields, setters, constructors, or methods. Spring automatically resolves and injects the required dependencies at runtime.
+
+# Problem 17: What’s the difference Between @Controller, @Component, @Repository, and @Service Annotations in Spring?
+
+@Controller: Used for classes that handle web requests.
+@Component: Generic stereotype annotation for any Spring-managed component.
+@Repository: Used for DAO (Data Access Object) classes.
+@Service: Used for service classes.
+# Problem 18: What is the default scope of a bean?
+The default scope of a bean in Spring is singleton, meaning a single instance of the bean is created and shared across the application context.
+
+# Problem 19: Are Spring beans thread safe?
+By default, Spring beans are singletons, and their state can be shared by multiple threads. However, the developer is responsible for ensuring thread safety if the bean has mutable state.
+
+# Problem 20: What are the other scopes available?
+Other scopes in Spring include prototype (a new instance per request), request (a new instance per HTTP request), session (a new instance per HTTP session), and custom scopes.
+
+# Problem 21: How is Spring’s singleton bean different from Gang of Four Singleton Pattern?
+Spring's singleton scope manages the lifecycle of beans within the Spring container, while the Gang of Four Singleton Pattern is a design pattern that ensures a class has only one instance and provides a global point of access to that instance.
+
+# Problem 22: What are the different types of dependency injections?
+There are three types of dependency injections in Spring:
+
+Constructor Injection
+Setter Injection
+Method Injection
+# Problem 23: What is setter injection?
+Setter injection is a type of dependency injection where dependencies are injected through setter methods. It allows for optional dependencies and supports changing dependencies at runtime.
+
+# Problem 24: What is constructor injection?
+Constructor injection is a type of dependency injection where dependencies are injected through the constructor of the class. It ensures that the required dependencies are provided during the object's creation.
+
+# Problem 25: How do you choose between setter and constructor injections?
+Use constructor injection when all dependencies are required and should be provided during object creation. Use setter injection for optional dependencies or when dependencies can be changed at runtime.
+
+# Problem 26: What are the different options available to create Application Contexts for Spring?
+You can create an application context using XML configuration, Java configuration, or a combination of both. Additionally, Spring Boot simplifies application context creation with default configurations.
+
+# Problem 27: What is the difference between XML and Java Configurations for Spring?
+XML Configuration: Externalized configuration in XML files.
+Java Configuration: Configuration using annotated Java classes. Often preferred for type safety, refactoring, and compile-time checking.
+# Problem 28: How do you choose between XML and Java Configurations for Spring?
+Choose XML configuration for larger projects with a separate configuration team. Choose Java configuration for smaller projects or projects with the development team handling both code and configuration.
+
+# Problem 29: How does Spring do Autowiring?
+Spring autowiring is performed using the @Autowired annotation. Spring looks for the type of the property or constructor parameter and tries to find a matching bean in the application context.
+
+# Problem 30: What are the different kinds of matching used by Spring for Autowiring?
+Spring supports several autowiring modes:
+
+No Autowiring (autowire = Autowire.NO): Default mode, no autowiring.
+Autowire by Type (autowire = Autowire.BY_TYPE): Matches by data type.
+Autowire by Name (autowire = Autowire.BY_NAME): Matches by bean name.
+Autowire by Constructor (autowire = Autowire.CONSTRUCTOR): Matches by constructor.
+# Problem 31: How do you debug problems with Spring Framework?
+```bash
+NoUniqueBeanDefinitionException
+NoSuchBeanDefinitionException
+```
+NoUniqueBeanDefinitionException: Occurs when there are multiple beans of the same type and Spring cannot determine which one to inject. Resolve by adding @Qualifier or using @Primary.
+NoSuchBeanDefinitionException: Occurs when trying to retrieve a non-existent bean. Check if the bean is correctly defined in the configuration.
+# Problem 32: What is @Primary?
+@Primary is used to give a higher preference to a specific bean when there are multiple beans of the same type. The bean marked with @Primary is the default bean chosen for injection.
+
+# Problem 33: What is @Qualifier?
+@Qualifier is used in conjunction with @Autowired to specify the name or qualifier of the bean to be injected. It resolves ambiguity when there are multiple beans of the same type.
+
+# Problem 34: What is CDI (Contexts and Dependency Injection)?
+CDI (Contexts and Dependency Injection) is a Java EE standard for dependency injection and contextual lifecycle management. It defines a set of services and APIs for building loosely coupled, scalable, and testable enterprise applications.
+
+# Problem 35: What is Model 1 architecture?
+Model 1 architecture is a web application architecture where the controller and view are combined into a single component. It is simple but lacks modularity and separation of concerns.
+
+# Problem 36: What is Model 2 architecture?
+Model 2 architecture is a web application architecture that separates the controller, model, and view components. It is a more modular and scalable approach compared to Model 1.
+
+# Problem 37: What is Model 2 Front Controller architecture?
+
+Model 2 Front Controller architecture is an extension of Model 2 where a front controller (e.g., Servlet) handles incoming requests and dispatches them to appropriate controllers. It centralizes request processing.
+
+# Problem 38: Can you show an example controller method in Spring MVC? 
+
+
+```bash
+@Controller
+@RequestMapping("/user")
+public class UserController {
+    @GetMapping("/profile")
+    public String userProfile(Model model) {
+        // Business logic to retrieve user profile data
+        User user = userService.getUserProfile();
+        model.addAttribute("user", user);
+        return "user-profile";
+    }
+}
+```
+# Problem 29: Can you explain a simple flow in Spring MVC?
+
+User sends a request: The request is sent to the DispatcherServlet.
+DispatcherServlet identifies the controller: Based on the request URL, the DispatcherServlet determines the appropriate controller to handle the request.
+Controller processes the request: The controller executes the business logic and returns a ModelAndView object.
+ViewResolver resolves the view: The ViewResolver takes the logical view name from the ModelAndView and resolves it to an actual view (JSP, Thymeleaf, etc.).
+View renders the response: The chosen view renders the response, incorporating data from the model.
+Response is sent to the user: The rendered response is sent back to the user's browser.
+# Problem 30: What is a ViewResolver?
+A ViewResolver is a Spring component that resolves the logical view names returned by controllers into actual view implementations. It maps the logical view name to a specific view technology (JSP, Thymeleaf, FreeMarker, etc.) and returns the corresponding View object.
+
+# Problem 31: Model vs ModelView
+
+Model: Represents the data that will be rendered in the view. It is typically a map-like structure where controller methods can add attributes.
+ModelAndView: Represents both the data (Model) and the view name. It allows specifying both the logical view name and the model data to be rendered.
+# Problem 32: What is a RequestMapping?
+@RequestMapping is an annotation used in Spring MVC to map web requests to specific controller methods. It can be applied at the class level to define a common base URL and at the method level to specify the subpath and HTTP method.
+
+# Problem 33: What is DispatcherServlet?
+DispatcherServlet is the front controller in Spring MVC. It receives all incoming requests, processes them, and dispatches them to the appropriate controllers. It plays a central role in the request-response flow in a Spring MVC application.
+
+# Problem 34: How do you set up Dispatcher Servlet?
+In the web.xml file (for traditional web applications) or in the ServletRegistrationBean (for Spring Boot applications), you configure the DispatcherServlet and map it to a specific URL pattern. Spring Boot automatically configures the DispatcherServlet with sensible defaults.
+
+# Problem 35: What is a form backing object?
+A form backing object is a Java object that holds the data submitted through an HTML form. It is associated with a form and typically contains fields corresponding to the form inputs. It is used to capture and validate user input.
+
+# Problem 36: How is validation done using Spring MVC?
+Validation in Spring MVC is done using the @Valid annotation along with a BindingResult parameter in the controller method. The @Valid annotation triggers the validation of the form backing object, and errors are captured in the BindingResult.
+
+# Problem 37: What is BindingResult?
+BindingResult is an interface in Spring MVC that holds the result of data binding and validation. It contains information about binding errors, allowing controllers to check for validation issues and take appropriate actions.
+
+# Problem 38: How do you map validation results to your view?
+In the controller method, you can check the BindingResult for errors. If there are errors, you can return the user to the form page with appropriate error messages. Use conditional logic to determine the flow based on validation results.
+
+# Problem 39: What are Spring Form Tags?
+Spring Form Tags are custom JSP tags provided by the Spring Framework to simplify the rendering of HTML forms in JSP pages. They facilitate the binding of form data to the form backing object and assist in handling validation errors.
+
+# Problem 40: What is a Path Variable?
+A path variable is a placeholder in the URL pattern of a @RequestMapping. It allows extracting values from the URI and passing them as parameters to the controller method. Path variables are specified in curly braces in the URL pattern.
+
+# Problem 41: What is a Model Attribute?
+@ModelAttribute is an annotation in Spring MVC used to bind a method parameter or method return value to a model attribute. It is often used to populate model attributes before handling a request or to add global attributes to all model objects.
+
+# Problem 42: What is a Session Attribute?
+@SessionAttributes is an annotation in Spring MVC used to declare session attributes at the controller class level. It allows specifying model attributes that should be stored in the HTTP session between requests, providing a way to retain data across multiple requests for a user.
+
+##JDBC & JPA
+# Problem 1: What is Spring JDBC? How is it different from JDBC?
+
+
+Spring JDBC: A module in the Spring Framework that simplifies database access using JDBC. It provides a higher-level abstraction, exception handling, and reduces boilerplate code.
+JDBC: Stands for Java Database Connectivity. It is a Java API for connecting and executing SQL queries on a database. It is lower-level and involves more manual coding compared to Spring JDBC.
+# Problem 2: What is a JdbcTemplate?
+JdbcTemplate is a class in Spring JDBC that simplifies the use of JDBC. It encapsulates common JDBC operations, handles exception translation, and eliminates the need for boilerplate code. It provides methods for executing SQL queries, updates, and managing transactions.
+
+# Problem 3: What is a RowMapper?
+RowMapper is an interface in Spring JDBC used for mapping rows of a ResultSet to Java objects. It is often used with JdbcTemplate to convert each row of the result set into an object of the specified type.
+
+# Problem 4: What is JPA?
+JPA (Java Persistence API) is a Java specification for managing relational data in Java applications. It provides a standard way to map Java objects to relational databases and vice versa. JPA implementations, such as Hibernate, simplify database operations and promote object-relational mapping.
+
+# Problem 5: What is Hibernate?
+Hibernate is a popular open-source JPA implementation and ORM (Object-Relational Mapping) framework for Java. It simplifies database operations by allowing developers to work with Java objects rather than SQL queries. Hibernate provides features like caching, lazy loading, and transaction management.
+
+# Problem 6: How do you define an entity in JPA?
+In JPA, an entity is a persistent object that is stored in a relational database. To define an entity, annotate a Java class with @Entity and specify the primary key using @Id. Additional annotations may be used to configure mappings, relationships, and other properties.
+
+```bash
+@Entity
+public class User {
+    @Id
+    private Long id;
+
+    // Other fields, getters, and setters
+}
+```
+# Problem 7: What is an Entity Manager?
+An EntityManager is the primary interface for interacting with JPA in a Java application. It is responsible for managing the lifecycle of entities, persisting and retrieving objects from the database, and executing queries. It represents a connection to the underlying database.
+
+# Problem 8: What is a Persistence Context?
+A persistence context is a set of managed entities in JPA. It represents the state of all managed entities associated with a particular EntityManager. The persistence context is responsible for tracking changes to entities and synchronizing those changes with the database.
+
+# Problem 9: How do you map relationships in JPA?
+Relationships in JPA are mapped using annotations like @OneToOne, @OneToMany, @ManyToOne, and @ManyToMany. These annotations define the association between entities and the cardinality of the relationship.
+
+# Problem 10: What are the different types of relationships in JPA?
+
+One-to-One (1:1): Each record in the first table is related to one record in the second table, and vice versa.
+One-to-Many (1:N): Each record in the first table can be related to multiple records in the second table.
+Many-to-One (N:1): Multiple records in the first table can be related to one record in the second table.
+Many-to-Many (N:N): Multiple records in the first table can be related to multiple records in the second table.
+# Problem 11: How do you define One-to-One Mapping in JPA?
+```bash
+@Entity
+public class Employee {
+    @Id
+    private Long id;
+
+    // Other fields
+
+    @OneToOne
+    @JoinColumn(name = "address_id")
+    private Address address;
+
+    // Getters and setters
+}
+
+@Entity
+public class Address {
+    @Id
+    private Long id;
+
+    // Other fields
+
+    @OneToOne(mappedBy = "address")
+    private Employee employee;
+
+    // Getters and setters
+}
+```
+# Problem 12: How do you define One-to-Many Mapping in JPA?
+```bash
+@Entity
+public class Post {
+    @Id
+    private Long id;
+
+    // Other fields
+
+    @OneToMany(mappedBy = "post")
+    private List<Comment> comments;
+
+    // Getters and setters
+}
+
+@Entity
+public class Comment {
+    @Id
+    private Long id;
+
+    // Other fields
+
+    @ManyToOne
+    @JoinColumn(name = "post_id")
+    private Post post;
+
+    // Getters and setters
+}
+```
+# Problem 13: How do you define Many-to-Many Mapping in JPA?
+```bash
+@Entity
+public class Student {
+    @Id
+    private Long id;
+
+    // Other fields
+
+    @ManyToMany
+    @JoinTable(name = "student_course",
+               joinColumns = @JoinColumn(name = "student_id"),
+               inverseJoinColumns = @JoinColumn(name = "course_id"))
+    private List<Course> courses;
+
+    // Getters and setters
+}
+
+@Entity
+public class Course {
+    @Id
+    private Long id;
+
+    // Other fields
+
+    @ManyToMany(mappedBy = "courses")
+    private List<Student> students;
+
+    // Getters and setters
+}
+
+```
+# Problem 14: How do you define a datasource in a Spring Context?
+```bash
+<!-- Using XML configuration -->
+<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+    <property name="url" value="jdbc:mysql://localhost:3306/mydatabase" />
+    <property name="username" value="username" />
+    <property name="password" value="password" />
+</bean>
+
+```
+# Problem 15: What is the use of persistence.xml?
+persistence.xml is a configuration file used in JPA to define persistence units, which specify how JPA providers should interact with the underlying database. It includes information such as the data source, entity classes, and various properties related to JPA.
+
+# Problem 16: How do you configure Entity Manager Factory and Transaction Manager?
+```bash
+<!-- Using XML configuration -->
+<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <property name="dataSource" ref="dataSource" />
+    <property name="packagesToScan" value="com.example.entities" />
+    <property name="jpaVendorAdapter">
+        <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+            <property name="showSql" value="true" />
+            <property name="generateDdl" value="true" />
+            <property name="database" value="MYSQL" />
+        </bean>
+    </property>
+</bean>
+
+<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="entityManagerFactory" />
+</bean>
+
+```
+# Problem 17: How do you define transaction management for Spring – Hibernate integration?
+```bash
+<!-- Using XML configuration -->
+<tx:annotation-driven />
+<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="entityManagerFactory" />
+</bean>
+```
+# Problem 18: What is Spring Data?
+Spring Data is a part of the Spring Framework that simplifies data access by providing a consistent, high-level programming model for various data sources. It includes modules for JPA, MongoDB, Redis, Cassandra, and more.
+
+# Problem 19: What is the need for Spring Data?
+Spring Data eliminates boilerplate code for common data access tasks, such as CRUD operations, pagination, and query execution. It provides abstraction over different data sources, allowing developers to work with data using a consistent API.
+
+# Problem 20: What is Spring Data JPA?
+Spring Data JPA is a module of Spring Data that simplifies data access using JPA. It provides repositories and query methods to interact with a relational database using JPA entities.
+
+# Problem 21: What is a CrudRepository?
+CrudRepository is an interface in Spring Data JPA that provides CRUD (Create, Read, Update, Delete) operations for a specific entity type. It extends the Repository interface and includes methods like save, findById, findAll, delete, etc.
+
+# Problem 22: What is a PagingAndSortingRepository?
+PagingAndSortingRepository is an interface in Spring Data JPA that extends CrudRepository and provides additional methods for paging and sorting results. It includes methods like findAll(Pageable pageable) to retrieve data in paginated form.
+
+
+## Exceptional Handling & RESTfull
+# Problem 1: How do you implement Exception Handling for RESTful Web Services?
+In Spring Boot, exception handling for RESTful web services can be implemented using @ControllerAdvice and @ExceptionHandler. Create a global exception handler class:
+
+```bash
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> handleException(Exception ex) {
+        ErrorResponse errorResponse = new ErrorResponse("Internal Server Error", HttpStatus.INTERNAL_SERVER_ERROR.value());
+        return new ResponseEntity<>(errorResponse, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+    // Add specific exception handlers as needed
+}
+```
+# Problem 2: What are the different error statuses that you would return in RESTful Web Services?
+
+Common HTTP error statuses returned in RESTful web services include:
+
+200 OK
+201 Created
+204 No Content
+400 Bad Request
+401 Unauthorized
+403 Forbidden
+404 Not Found
+405 Method Not Allowed
+409 Conflict
+500 Internal Server Error
+# Problem 3: How would you implement them using Spring Boot?
+Define custom exception classes and handle them using @ControllerAdvice:
+
+```bash
+@ControllerAdvice
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleResourceNotFoundException(ResourceNotFoundException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(ex.getMessage(), HttpStatus.NOT_FOUND.value());
+        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ErrorResponse> handleBadRequestException(BadRequestException ex) {
+        ErrorResponse errorResponse = new ErrorResponse(ex.getMessage(), HttpStatus.BAD_REQUEST.value());
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+    }
+
+    // Add more specific exception handlers as needed
+}
+```
+# Problem 4: How do you handle Validation Errors with RESTful Web Services?
+Use MethodArgumentNotValidException and BindingResult for validation errors. Annotate the request body with @Valid:
+
+```bash
+@RestController
+@RequestMapping("/api/users")
+public class UserController {
+
+    @PostMapping
+    public ResponseEntity<User> createUser(@Valid @RequestBody User user, BindingResult result) {
+        if (result.hasErrors()) {
+            throw new ValidationException(result.getAllErrors().get(0).getDefaultMessage());
+        }
+
+        // Logic to save the user
+        // Return success response
+    }
+}
+```
+# Problem 5: Why do we need Versioning for RESTful Web Services?
+Versioning in RESTful web services is needed to manage changes in APIs, ensuring backward compatibility while introducing new features or breaking changes. It allows clients to specify the version of the API they want to use, preventing disruptions in functionality when the server undergoes changes.
+
+# Problem 6: What are the versioning options that are available?
+Common versioning options include:
+
+URI Versioning: Include the version in the URI (e.g., /v1/users).
+QueryParam Versioning: Include the version as a query parameter (e.g., /users?v=1).
+Header Versioning: Include the version in a custom header (e.g., X-API-Version: 1).
+Media Type Versioning (Content Negotiation): Include the version in the Accept header or the media type (e.g., Accept: application/vnd.company.api.v1+json).
+# Problem 7: How do you implement Versioning for RESTful Web Services?
+Using URI Versioning as an example:
+
+```bash
+@RestController
+@RequestMapping("/v1/users")
+public class UserControllerV1 {
+    // Controller logic for version 1
+}
+
+@RestController
+@RequestMapping("/v2/users")
+public class UserControllerV2 {
+    // Controller logic for version 2
+}
+```
+Clients can then access different versions of the API by specifying the appropriate URI, such as /v1/users or /v2/users.
+
+
+
+
+
+
+
+
+

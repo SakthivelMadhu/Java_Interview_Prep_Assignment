@@ -440,8 +440,8 @@ Use constructor injection when all dependencies are required and should be provi
 You can create an application context using XML configuration, Java configuration, or a combination of both. Additionally, Spring Boot simplifies application context creation with default configurations.
 
 # Problem 27: What is the difference between XML and Java Configurations for Spring?
-XML Configuration: Externalized configuration in XML files.
-Java Configuration: Configuration using annotated Java classes. Often preferred for type safety, refactoring, and compile-time checking.
+XML Configuration: Externalized configuration in XML files. <br>
+Java Configuration: Configuration using annotated Java classes. Often preferred for type safety, refactoring, and compile-time checking. <br>
 # Problem 28: How do you choose between XML and Java Configurations for Spring?
 Choose XML configuration for larger projects with a separate configuration team. Choose Java configuration for smaller projects or projects with the development team handling both code and configuration.
 

@@ -460,7 +460,7 @@ Autowire by Constructor (autowire = Autowire.CONSTRUCTOR): Matches by constructo
 NoUniqueBeanDefinitionException
 NoSuchBeanDefinitionException
 ```
-NoUniqueBeanDefinitionException: Occurs when there are multiple beans of the same type and Spring cannot determine which one to inject. Resolve by adding @Qualifier or using @Primary.
+NoUniqueBeanDefinitionException: Occurs when there are multiple beans of the same type and Spring cannot determine which one to inject. Resolve by adding @Qualifier or using @Primary. <br>
 NoSuchBeanDefinitionException: Occurs when trying to retrieve a non-existent bean. Check if the bean is correctly defined in the configuration.
 # Problem 32: What is @Primary?
 @Primary is used to give a higher preference to a specific bean when there are multiple beans of the same type. The bean marked with @Primary is the default bean chosen for injection.

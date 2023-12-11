@@ -499,8 +499,8 @@ public class UserController {
 ```
 # Problem 29: Can you explain a simple flow in Spring MVC?
 
-User sends a request: The request is sent to the DispatcherServlet.
-DispatcherServlet identifies the controller: Based on the request URL, the DispatcherServlet determines the appropriate controller to handle the request.
+User sends a request: The request is sent to the DispatcherServlet.<br>
+DispatcherServlet identifies the controller: Based on the request URL, the DispatcherServlet determines the appropriate controller to handle the request. <br>
 Controller processes the request: The controller executes the business logic and returns a ModelAndView object. <br>
 ViewResolver resolves the view: The ViewResolver takes the logical view name from the ModelAndView and resolves it to an actual view (JSP, Thymeleaf, etc.). <br>
 View renders the response: The chosen view renders the response, incorporating data from the model. <br>

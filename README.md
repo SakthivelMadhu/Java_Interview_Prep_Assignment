@@ -356,11 +356,11 @@ Auto-wiring is a feature in Spring that allows the container to automatically in
 
 # Problem 7: What are the important roles of an IOC Container?
 
-Instantiation: Manages the creation of objects.
-Configuration: Configures objects and their relationships.
-Assembly: Assembles the application's components.
-Lifecycle Management: Manages the lifecycle of objects.
-Dependency Injection: Injects dependencies into components.
+Instantiation: Manages the creation of objects. <br>
+Configuration: Configures objects and their relationships.<br>
+Assembly: Assembles the application's components. <br>
+Lifecycle Management: Manages the lifecycle of objects. <br>
+Dependency Injection: Injects dependencies into components. <br>
 # Problem 8: What are Bean Factory and Application Context?
 
 Bean Factory: The basic IoC container provided by Spring. It manages the lifecycle of beans and their dependencies.
@@ -405,10 +405,10 @@ In Spring Boot, component scanning is enabled by default. Spring Boot uses the p
 
 # Problem 17: What’s the difference Between @Controller, @Component, @Repository, and @Service Annotations in Spring?
 
-@Controller: Used for classes that handle web requests.
-@Component: Generic stereotype annotation for any Spring-managed component.
-@Repository: Used for DAO (Data Access Object) classes.
-@Service: Used for service classes.
+@Controller: Used for classes that handle web requests. <br>
+@Component: Generic stereotype annotation for any Spring-managed component. <br>
+@Repository: Used for DAO (Data Access Object) classes. <br>
+@Service: Used for service classes. <br>
 # Problem 18: What is the default scope of a bean?
 The default scope of a bean in Spring is singleton, meaning a single instance of the bean is created and shared across the application context.
 
@@ -424,9 +424,9 @@ Spring's singleton scope manages the lifecycle of beans within the Spring contai
 # Problem 22: What are the different types of dependency injections?
 There are three types of dependency injections in Spring:
 
-Constructor Injection
-Setter Injection
-Method Injection
+Constructor Injection <br>
+Setter Injection <br>
+Method Injection <br>
 # Problem 23: What is setter injection?
 Setter injection is a type of dependency injection where dependencies are injected through setter methods. It allows for optional dependencies and supports changing dependencies at runtime.
 
@@ -451,10 +451,10 @@ Spring autowiring is performed using the @Autowired annotation. Spring looks for
 # Problem 30: What are the different kinds of matching used by Spring for Autowiring?
 Spring supports several autowiring modes:
 
-No Autowiring (autowire = Autowire.NO): Default mode, no autowiring.
-Autowire by Type (autowire = Autowire.BY_TYPE): Matches by data type.
-Autowire by Name (autowire = Autowire.BY_NAME): Matches by bean name.
-Autowire by Constructor (autowire = Autowire.CONSTRUCTOR): Matches by constructor.
+No Autowiring (autowire = Autowire.NO): Default mode, no autowiring. <br>
+Autowire by Type (autowire = Autowire.BY_TYPE): Matches by data type. <br>
+Autowire by Name (autowire = Autowire.BY_NAME): Matches by bean name. <br>
+Autowire by Constructor (autowire = Autowire.CONSTRUCTOR): Matches by constructor. <br>
 # Problem 31: How do you debug problems with Spring Framework?
 ```bash
 NoUniqueBeanDefinitionException
@@ -501,10 +501,10 @@ public class UserController {
 
 User sends a request: The request is sent to the DispatcherServlet.
 DispatcherServlet identifies the controller: Based on the request URL, the DispatcherServlet determines the appropriate controller to handle the request.
-Controller processes the request: The controller executes the business logic and returns a ModelAndView object.
-ViewResolver resolves the view: The ViewResolver takes the logical view name from the ModelAndView and resolves it to an actual view (JSP, Thymeleaf, etc.).
-View renders the response: The chosen view renders the response, incorporating data from the model.
-Response is sent to the user: The rendered response is sent back to the user's browser.
+Controller processes the request: The controller executes the business logic and returns a ModelAndView object. <br>
+ViewResolver resolves the view: The ViewResolver takes the logical view name from the ModelAndView and resolves it to an actual view (JSP, Thymeleaf, etc.). <br>
+View renders the response: The chosen view renders the response, incorporating data from the model. <br>
+Response is sent to the user: The rendered response is sent back to the user's browser. <br>
 # Problem 30: What is a ViewResolver?
 A ViewResolver is a Spring component that resolves the logical view names returned by controllers into actual view implementations. It maps the logical view name to a specific view technology (JSP, Thymeleaf, FreeMarker, etc.) and returns the corresponding View object.
 
@@ -586,10 +586,10 @@ Relationships in JPA are mapped using annotations like @OneToOne, @OneToMany, @M
 
 # Problem 10: What are the different types of relationships in JPA?
 
-One-to-One (1:1): Each record in the first table is related to one record in the second table, and vice versa.
-One-to-Many (1:N): Each record in the first table can be related to multiple records in the second table.
-Many-to-One (N:1): Multiple records in the first table can be related to one record in the second table.
-Many-to-Many (N:N): Multiple records in the first table can be related to multiple records in the second table.
+One-to-One (1:1): Each record in the first table is related to one record in the second table, and vice versa. <br>
+One-to-Many (1:N): Each record in the first table can be related to multiple records in the second table. <br>
+Many-to-One (N:1): Multiple records in the first table can be related to one record in the second table. <br>
+Many-to-Many (N:N): Multiple records in the first table can be related to multiple records in the second table. <br>
 # Problem 11: How do you define One-to-One Mapping in JPA?
 ```bash
 @Entity
@@ -759,16 +759,16 @@ public class GlobalExceptionHandler {
 
 Common HTTP error statuses returned in RESTful web services include:
 
-200 OK
-201 Created
-204 No Content
-400 Bad Request
-401 Unauthorized
-403 Forbidden
-404 Not Found
-405 Method Not Allowed
-409 Conflict
-500 Internal Server Error
+200 OK <br>
+201 Created <br>
+204 No Content <br>
+400 Bad Request <br>
+401 Unauthorized <br>
+403 Forbidden <br>
+404 Not Found <br>
+405 Method Not Allowed <br>
+409 Conflict <br>
+500 Internal Server Error <br>
 # Problem 3: How would you implement them using Spring Boot?
 Define custom exception classes and handle them using @ControllerAdvice:
 
@@ -816,10 +816,10 @@ Versioning in RESTful web services is needed to manage changes in APIs, ensuring
 # Problem 6: What are the versioning options that are available?
 Common versioning options include:
 
-URI Versioning: Include the version in the URI (e.g., /v1/users).
-QueryParam Versioning: Include the version as a query parameter (e.g., /users?v=1).
-Header Versioning: Include the version in a custom header (e.g., X-API-Version: 1).
-Media Type Versioning (Content Negotiation): Include the version in the Accept header or the media type (e.g., Accept: application/vnd.company.api.v1+json).
+URI Versioning: Include the version in the URI (e.g., /v1/users). <br>
+QueryParam Versioning: Include the version as a query parameter (e.g., /users?v=1). <br>
+Header Versioning: Include the version in a custom header (e.g., X-API-Version: 1). <br>
+Media Type Versioning (Content Negotiation): Include the version in the Accept header or the media type (e.g., Accept: application/vnd.company.api.v1+json). <br>
 # Problem 7: How do you implement Versioning for RESTful Web Services?
 Using URI Versioning as an example:
 
